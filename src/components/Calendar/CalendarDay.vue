@@ -2,7 +2,6 @@
     <section class="calendar-day" :class="cssClasses">
         <header>
             <span class="day">{{ day }}</span>
-            <span class="m-lg-auto">{{ day }}</span>
         </header>
         <main>
             <EventCalender v-for="(event, i) in dayEvents" :key="i" :event="event" />

@@ -2,11 +2,14 @@
     <nav class="nav nav-tabs sticky-top bg-light">
         <a v-for="(tab, i) in tabs" :key="i"
            class="nav-link"
-           :class="{[tab]: true, active: tab === selectedTab}"
+           :class="{
+            [tab]: true,
+             active: tab === selectedTab
+           }"
            href="#"
            @click="selectedTab=tab"
         >
-            {{ tab }}
+            {{ tab === 'Settings' ? '⛭' : tab }}
         </a>
     </nav>
     <section v-if="selectedTab === 'Settings'">
@@ -92,6 +95,8 @@ export default class App extends Vue {
 
     .Settings {
         margin-left: auto;
+        padding-left: map-get($spacers, 1);
+        padding-right: map-get($spacers, 1);
     }
 }
 

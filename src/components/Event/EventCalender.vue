@@ -103,6 +103,7 @@ dl,dt,dd {
 }
 
 .event-calender-details {
+    max-width: calc(100vw - map-get($spacers, 4));
     border-radius: map-get($spacers, 2);
     padding: map-get($spacers, 2);
     box-shadow: 0 0 map-get($spacers, 1) 2px $dark;

@@ -33,6 +33,10 @@ export default class Calendar extends Vue {
     grid-template-rows: auto repeat(5, minmax(3rem, 1fr));
     padding: map-get($spacers, 2);
 
+    @include media-breakpoint-down(sm) {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .grid-cell {
         padding: map-get($spacers, 1);
     }
@@ -41,6 +45,9 @@ export default class Calendar extends Vue {
         margin-bottom: map-get($spacers, 2);
         font-weight: bold;
         text-align: center;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
     }
 
     &.Spring {
