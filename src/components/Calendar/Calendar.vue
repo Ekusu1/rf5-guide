@@ -3,9 +3,7 @@
         <header class="grid-row">
             <strong v-for="(weekday, i) in weekdays" :key="i" class="grid-cell">{{ weekday }}</strong>
         </header>
-        <div class="grid-cell" v-for="day in days" :key="day">
-            <CalendarDay class="grid-cell" :season="season" :day="day" />
-        </div>
+        <CalendarDay v-for="day in days" :key="day" class="grid-cell" :season="season" :day="day" />
     </div>
 </template>
 <script lang="ts">
@@ -32,13 +30,12 @@ export default class Calendar extends Vue {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto repeat(5, minmax(3rem, 1fr));
     padding: map-get($spacers, 2);
+    grid-gap: map-get($spacers, 2);
 
     @include media-breakpoint-down(sm) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .grid-cell {
-        padding: map-get($spacers, 1);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-auto-rows: auto;
     }
 
     header {

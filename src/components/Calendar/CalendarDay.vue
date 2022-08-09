@@ -2,6 +2,7 @@
     <section class="calendar-day" :class="cssClasses">
         <header>
             <span class="day">{{ day }}</span>
+            <span class="weekday">{{ weekDay }}</span>
         </header>
         <main>
             <EventCalender v-for="(event, i) in dayEvents" :key="i" :event="event" />
@@ -28,16 +29,21 @@ export default class CalendarDay extends Vue {
     get dayEvents(): RfEvent[] {
         return this.events.filter(({date}) => date?.season === this.season && date.day === this.day);
     }
-    //
-    // get weekDay(): string {
-    //
-    //     if (this.day % 1 === 0 )
-    // }
+
+    get weekDay(): string {
+        const hol = [1, 7, 13, 19, 25];
+        const weekDay = ['Hol', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+
+        return weekDay.reduce((r, wd, i) =>
+            hol.map(e => e + i).includes(this.day) ? wd : r
+        )
+    }
 
 
     get cssClasses() {
         return {
-            holiday: [1, 7, 13, 19, 25].includes(this.day)
+            holiday: [1, 7, 13, 19, 25].includes(this.day),
+            empty: !this.dayEvents.length
         };
     }
 }
@@ -51,6 +57,12 @@ export default class CalendarDay extends Vue {
     border: 2px dashed $rf-calendar-day-border;
     border-radius: map-get($spacers, 2);
 
+    @include media-breakpoint-down(sm) {
+        &.empty {
+            display: none;
+        }
+    }
+
     &.holiday {
         background-color: $rf-calendar-holiday;
     }
@@ -61,6 +73,15 @@ export default class CalendarDay extends Vue {
 
     header {
         font-weight: bold;
+        .weekday {
+            display: none;
+            padding-left: map-get($spacers, 2);
+
+            @include media-breakpoint-down(sm) {
+                display: inline;
+            }
+        }
     }
+
 }
 </style>
