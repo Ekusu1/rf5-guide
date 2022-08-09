@@ -1,0 +1,13 @@
+@import '~bootstrap/scss/bootstrap';
+
+.grid-row, .grid-col {
+	display: contents;
+}
+
+.grid-cell {
+	background-color: inherit;
+	color: inherit;
+	font: inherit;
+	margin: inherit;
+	padding: inherit;
+}
