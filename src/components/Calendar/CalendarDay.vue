@@ -2,7 +2,7 @@
     <section class="calendar-day" :class="cssClasses">
         <header>
             <span class="day">{{ day }}</span>
-            <span class="weekday">{{ weekDay }}</span>
+            <span class="weekday">({{ rfDate.weekday }})</span>
         </header>
         <main>
             <EventCalender v-for="(event, i) in dayEvents" :key="i" :event="event" />
@@ -12,8 +12,8 @@
 <script lang="ts">
 import {Options, Vue} from 'vue-class-component';
 import {Inject, Prop} from 'vue-property-decorator';
-import {Seasons} from '@/_data/_enums';
-import {RfEvent} from '@/_data/_classes';
+import {RfSeasons} from '@/_data/_enums';
+import {RfDate, RfEvent} from '@/_data/_classes';
 import EventCalender from '@/components/Event/EventCalender.vue';
 
 @Options({
@@ -21,7 +21,7 @@ import EventCalender from '@/components/Event/EventCalender.vue';
     components: {EventCalender}
 })
 export default class CalendarDay extends Vue {
-    @Prop(Seasons) readonly season!: Seasons;
+    @Prop(RfSeasons) readonly season!: RfSeasons;
     @Prop(Number) readonly day!: number;
     @Inject('events') readonly events!: RfEvent[];
 
@@ -30,15 +30,9 @@ export default class CalendarDay extends Vue {
         return this.events.filter(({date}) => date?.season === this.season && date.day === this.day);
     }
 
-    get weekDay(): string {
-        const hol = [1, 7, 13, 19, 25];
-        const weekDay = ['Hol', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-
-        return weekDay.reduce((r, wd, i) =>
-            hol.map(e => e + i).includes(this.day) ? wd : r
-        )
+    get rfDate () {
+        return new RfDate(this.season, this.day);
     }
-
 
     get cssClasses() {
         return {
@@ -73,6 +67,7 @@ export default class CalendarDay extends Vue {
 
     header {
         font-weight: bold;
+
         .weekday {
             display: none;
             padding-left: map-get($spacers, 2);

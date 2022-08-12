@@ -312,14 +312,31 @@ $dark:          $gray-900 !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  'primary':    $primary,
-  'secondary':  $secondary,
-  'success':    $success,
-  'info':       $info,
-  'warning':    $warning,
-  'danger':     $danger,
-  'light':      $light,
-  'dark':       $dark
+  'primary':      $primary,
+  'secondary':    $secondary,
+  'success':      $success,
+  'info':         $info,
+  'warning':      $warning,
+  'danger':       $danger,
+  'light':        $light,
+  'dark':         $dark,
+
+  'spring':       $rf-spring-dark,
+  'spring-light': $rf-spring-light,
+  'summer':       $rf-summer-dark,
+  'summer-light': $rf-summer-light,
+  'autumn':       $rf-autumn-dark,
+  'autumn-light': $rf-autumn-light,
+  'winter':       $rf-winter-dark,
+  'winter-light': $rf-winter-light,
+
+  'male':         $blue,
+  'female':       $pink,
+
+  'event-birthday': $rf-event-birthday,
+  'event-festival': $rf-event-festival,
+  'event-directive': $rf-event-directive,
+  'event-other': $rf-event-other,
 ) !default;
 // scss-docs-end theme-colors-map
 

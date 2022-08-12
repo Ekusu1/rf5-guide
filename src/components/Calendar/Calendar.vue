@@ -10,15 +10,14 @@
 import {Options, Vue} from 'vue-class-component';
 import {Prop} from 'vue-property-decorator';
 import CalendarDay from '@/components/Calendar/CalendarDay.vue';
-import {Seasons} from '@/_data/_enums';
+import {RfSeasons} from '@/_data/_enums';
 
 @Options({
     name: 'Calendar',
     components: {CalendarDay}
-
 })
 export default class Calendar extends Vue {
-    @Prop(Seasons) readonly season!: Seasons;
+    @Prop(RfSeasons) readonly season!: RfSeasons;
 
     weekdays = ['Hol', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
     days = Array(30).fill('').map((v, k) => k + 1);
@@ -26,6 +25,7 @@ export default class Calendar extends Vue {
 </script>
 <style lang="scss" scoped>
 .calendar {
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: auto repeat(5, minmax(3rem, 1fr));

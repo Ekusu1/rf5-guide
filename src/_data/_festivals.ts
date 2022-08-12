@@ -1,200 +1,200 @@
-import {Seasons, FestivalTypes} from './_enums';
-import {Festival} from '@/_data/_classes';
+import {RfSeasons, RfFestivalTypes} from './_enums';
+import {RfFestival, RfDate} from '@/_data/_classes';
 
-export const _festivals: Festival[] = [
-	new Festival({
+export const _festivals: RfFestival[] = [
+	new RfFestival({
 		name: 'New Year\'s Day',
-		date: {season: Seasons.Spring, day: 1},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Spring, 1),
+		type: RfFestivalTypes.Dialogue,
 		directive: false,
 		making: [],
 		directiveCost: 0,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Cooking Contest',
-		date: {season: Seasons.Spring, day: 6},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Spring, 6),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Winter, Seasons.Spring],
+		making: [RfSeasons.Winter, RfSeasons.Spring],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Bean Toss Contest',
-		date: {season: Seasons.Spring, day: 10},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Spring, 10),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Spring],
+		making: [RfSeasons.Spring],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Fish Variety Contest',
-		date: {season: Seasons.Spring, day: 15},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Spring, 15),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Spring],
+		making: [RfSeasons.Spring],
 		directiveCost: 1000,
 		replay: true
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Flower Festival',
-		date: {season: Seasons.Spring, day: 19},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Spring, 19),
+		type: RfFestivalTypes.Dialogue,
 		directive: true,
-		making: [Seasons.Spring],
+		making: [RfSeasons.Spring],
 		directiveCost: 1500,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Harvest Festival',
-		date: {season: Seasons.Spring, day: 28},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Spring, 28),
+		type: RfFestivalTypes.Contest,
 		directive: false,
-		making: [Seasons.Spring],
+		making: [RfSeasons.Spring],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Beach Day',
-		date: {season: Seasons.Summer, day: 1},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Summer, 1),
+		type: RfFestivalTypes.Dialogue,
 		directive: false,
 		making: [],
 		directiveCost: 0,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Buff-a-Move',
-		date: {season: Seasons.Summer, day: 11},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Summer, 11),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Spring, Seasons.Summer],
+		making: [RfSeasons.Spring, RfSeasons.Summer],
 		directiveCost: 1000,
 		replay: true
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Buddy Battle',
-		date: {season: Seasons.Summer, day: 15},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Summer, 15),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Summer],
+		making: [RfSeasons.Summer],
 		directiveCost: 1000,
 		replay: true
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Seaside Lights Festival',
-		date: {season: Seasons.Summer, day: 19},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Summer, 19),
+		type: RfFestivalTypes.Dialogue,
 		directive: false,
-		making: [Seasons.Summer],
+		making: [RfSeasons.Summer],
 		directiveCost: 1500,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Harvest Festival',
-		date: {season: Seasons.Summer, day: 28},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Summer, 28),
+		type: RfFestivalTypes.Contest,
 		directive: false,
-		making: [Seasons.Summer],
+		making: [RfSeasons.Summer],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Handicraft Contest',
-		date: {season: Seasons.Autumn, day: 3},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Autumn, 3),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Summer, Seasons.Autumn],
+		making: [RfSeasons.Summer, RfSeasons.Autumn],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Valentine\'s Day',
-		date: {season: Seasons.Autumn, day: 12},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Autumn, 12),
+		type: RfFestivalTypes.Dialogue,
 		directive: false,
-		making: [Seasons.Autumn],
+		making: [RfSeasons.Autumn],
 		directiveCost: 1500,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Eating Contest',
-		date: {season: Seasons.Autumn, day: 15},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Autumn, 15),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Autumn],
+		making: [RfSeasons.Autumn],
 		directiveCost: 1000,
 		replay: true
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Tricky Treats',
-		date: {season: Seasons.Autumn, day: 19},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Autumn, 19),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Autumn],
+		making: [RfSeasons.Autumn],
 		directiveCost: 1500,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'White Day',
-		date: {season: Seasons.Autumn, day: 25},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Autumn, 25),
+		type: RfFestivalTypes.Dialogue,
 		directive: false,
-		making: [Seasons.Autumn],
+		making: [RfSeasons.Autumn],
 		directiveCost: 1500,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Harvest Contest',
-		date: {season: Seasons.Autumn, day: 28},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Autumn, 28),
+		type: RfFestivalTypes.Contest,
 		directive: false,
-		making: [Seasons.Autumn],
+		making: [RfSeasons.Autumn],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Snow Brawl',
-		date: {season: Seasons.Winter, day: 3},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Winter, 3),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Autumn, Seasons.Winter],
+		making: [RfSeasons.Autumn, RfSeasons.Winter],
 		directiveCost: 1000,
 		replay: true
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Squid Catch Contest',
-		date: {season: Seasons.Winter, day: 13},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Winter, 13),
+		type: RfFestivalTypes.Contest,
 		directive: true,
-		making: [Seasons.Winter],
+		making: [RfSeasons.Winter],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Christmas',
-		date: {season: Seasons.Winter, day: 25},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Winter, 25),
+		type: RfFestivalTypes.Dialogue,
 		directive: false,
-		making: [Seasons.Winter],
+		making: [RfSeasons.Winter],
 		directiveCost: 1500,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'Harvest Festival',
-		date: {season: Seasons.Winter, day: 28},
-		type: FestivalTypes.Contest,
+		date: new RfDate(RfSeasons.Winter, 28),
+		type: RfFestivalTypes.Contest,
 		directive: false,
-		making: [Seasons.Winter],
+		making: [RfSeasons.Winter],
 		directiveCost: 1000,
 		replay: false
 	}),
-	new Festival({
+	new RfFestival({
 		name: 'New Year\'s Eve',
-		date: {season: Seasons.Winter, day: 30},
-		type: FestivalTypes.Dialogue,
+		date: new RfDate(RfSeasons.Winter, 30),
+		type: RfFestivalTypes.Dialogue,
 		directive: false,
 		making: [],
 		directiveCost: 0,
