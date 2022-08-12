@@ -27,8 +27,6 @@ export default class CharacterList extends Vue {
     @Inject() readonly settings!: RfSettings;
 
     get groupedCharacters (): Record<string, RfCharacter[]> {
-        console.log(_characters.filter(e => e.enabled));
-        console.log(groupBy(_characters, 'type'));
         return groupBy(_characters.filter(e => e.enabled), e =>
             [RfCharacterTypes.Player, RfCharacterTypes.Children].includes(e.type)
                 ? 'Player & Children'

@@ -39,6 +39,10 @@ export default class RfNav extends Vue {
             classes: 'ms-3'
         },
         {
+            tab: 'Crops',
+            classes: 'ms-3'
+        },
+        {
             tab: 'Settings',
             label: '⛭',
             classes: 'ms-auto'
@@ -58,7 +62,7 @@ export default class RfNav extends Vue {
 </script>
 <style lang="scss" scoped>
 .nav {
-    //z-index: 1000;
+    z-index: 2000;
 
     .Spring {
         background-color: $rf-spring-light;

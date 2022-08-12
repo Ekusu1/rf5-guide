@@ -74,8 +74,9 @@ export default class BsModal extends Vue {
 </script>
 <style lang="scss" scoped>
 .bs-modal {
+    z-index: 3050;
     .modal-dialog {
-        z-index: 1055;
+        z-index: 3055;
     }
 }
 </style>

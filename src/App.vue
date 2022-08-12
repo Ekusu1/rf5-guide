@@ -3,6 +3,7 @@
         <RfNav @selected="selected = $event" />
         <main>
             <CharacterList v-if="selected === 'Characters'" />
+            <CropList v-if="selected === 'Crops'" />
             <Settings v-else-if="selected === 'Settings'" />
             <Calendar v-else :season="selected" :events="events" />
         </main>
@@ -21,9 +22,11 @@ import {sortBy} from 'lodash';
 import RfNav from '@/components/RfNav/RfNav.vue';
 import CharacterList from '@/components/CharacterList/CharacterList.vue';
 import Settings from '@/components/Settings/Settings.vue';
+import CropList from '@/components/CropList/CropList.vue';
 
 @Options({
     components: {
+        CropList,
         Settings,
         CharacterList,
         RfNav,
